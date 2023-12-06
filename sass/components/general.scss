@@ -1,0 +1,223 @@
+@use "../abstracts/functions.scss" as f;
+@use "../abstracts/colors.scss";
+
+/* HEADING */
+.mainheading {
+    color: var(--color-white);
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.primary-heading {
+    font-size: f.rem(28px);
+    line-height: f.rem(35px);
+}
+
+.mainheading-text {
+    margin-top: f.rem(20px);
+}
+
+
+/* 2ND HEADING */
+.secondheading {
+    margin-top: f.rem(60px);
+
+    box-shadow: 0px 6px 0px 0px rgba(0,0,0,0.1);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    text-align: center;
+    text-wrap: wrap;
+
+    border-radius: f.rem(10px);
+    padding: f.rem(15px) 0;
+}
+
+.secondary-heading {
+    font-size: f.rem(16px);
+    font-weight: 700;
+}
+
+.secondary-heading span {
+    font-size: f.rem(13px);
+    font-weight: 400;
+}
+
+/* FORM */
+.c-form {
+    // grid-column: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    margin-top: f.rem(30px);
+    background-color: var(--color-white);
+    padding: f.rem(20px);
+    border-radius: f.rem(10px);
+
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-control input {
+    border-radius: f.rem(5px);
+    font-size: f.rem(14px);
+    font-weight: 600;
+    padding: f.rem(15px);
+
+    border: 1px solid #f0f0f0;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: var(--color-blue);
+}
+
+// Form Control Styles
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: var(--color-red);;
+}
+
+.form-control svg {
+    position: absolute;
+    visibility: hidden;
+
+    top: 14px;
+	right: 20px;
+}
+
+.form-control.success svg.fa-check-circle {
+	fill: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error svg.fa-exclamation-circle {
+	fill: var(--color-red);
+	visibility: visible;
+}
+
+.form-control small {
+    display: block;
+    text-align: right;
+    font-style: italic;
+	color: var(--color-red);
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+    margin-top: f.rem(5px);
+    margin-bottom: f.rem(20px);
+}
+
+/* BUTTON */
+button {
+    text-align: center;
+    cursor: pointer;
+    padding: f.rem(15px) 0;
+    text-transform: uppercase;
+    background-color: var(--color-green);
+    border-radius: f.rem(5px);
+    box-shadow: 0px 4px 0px 0px hsla(154, 59%, 51%, 0.3);
+    border: 1px solid #f0f0f0;
+    color: var(--color-white);
+
+    font-weight: 600;
+    letter-spacing: f.rem(2px);
+
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #77E2B3;
+}
+
+.form-text {
+    text-align: center;
+    margin-top: f.rem(15px);
+    font-size: f.rem(13px);
+    color: var(--color-greyish-blue);
+}
+
+.form-text span {
+    font-weight: 600;
+    color: var(--color-red);
+}
+
+@media (width > 50em) {
+    /* HEADING */
+    .mainheading {
+        grid-area: title;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: left;
+        text-wrap: pretty;
+    }
+
+    .primary-heading {
+        font-size: f.rem(65px);
+        line-height: f.rem(70px);
+    }
+
+    .mainheading-text {
+        margin-top: f.rem(60px);
+        font-size: f.rem(20px);
+    }
+
+    /* 2ND HEADING */
+    .secondheading {
+        grid-area: button;
+        font-size: f.rem(25px);
+        box-shadow: 0px 9px 0px 0px rgba(0,0,0,0.1);
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .secondary-heading {
+        font-size: f.rem(18px);
+    }
+    
+    .secondary-heading span {
+        font-size: f.rem(15px);
+    }
+
+    br {
+        /* hide the BR tag for wider screens (i.e. no line break) */
+        display: none; 
+      }
+
+    /* FORM */
+    .c-form {
+        grid-area: form;
+        padding: f.rem(50px) f.rem(40px);
+    }
+
+    .form-control input {
+        font-size: f.rem(16px);
+        padding: f.rem(20px) f.rem(30px);
+    
+        border: 2px solid #d8d7d7;
+    }
+
+    .form-control input:focus {
+        outline: 0;
+        border-color: var(--color-blue);
+    }
+
+    .form-control svg {
+        top: 20px;
+        right: 30px;
+    }
+  }
